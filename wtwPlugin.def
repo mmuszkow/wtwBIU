@@ -1,0 +1,6 @@
+LIBRARY	"utlFTP"
+
+EXPORTS
+	queryPlugInfo
+	pluginLoad
+	pluginUnload
