@@ -1,4 +1,4 @@
-#include "stdinc.h"
+Ôªø#include "stdinc.h"
 #include "PluginController.h"
 #include "SettingsController.h"
 #include "hInput.h"
@@ -14,7 +14,7 @@ namespace wtwBIU
 
 		wtwOptionPageDef pg;
 		pg.id = getPlugInfo()->pluginGUID;
-		pg.parentID = WTW_OPTIONS_GROUP_PLUGINS;
+		pg.parentId = WTW_OPTIONS_GROUP_PLUGINS;
 		pg.caption = L"Formatowanie";
 		pg.callback = onSettingsShow; 
 		pg.cbData = this;
@@ -31,7 +31,7 @@ namespace wtwBIU
 		wtwGraphics wg;
 		wg.hInst = hInst;
 
-		wg.graphID = BIU_BOLD;
+		wg.graphId = BIU_BOLD;
 		wg.resourceId = 0;
 		wg.filePath = L"iconBold.png";
 		wg.flags = WTW_GRAPH_FLAG_RELATIVE_DEF_PATH;
@@ -44,7 +44,7 @@ namespace wtwBIU
 		}
 		
 
-		wg.graphID = BIU_ITALIC;
+		wg.graphId = BIU_ITALIC;
 		wg.resourceId = 0;
 		wg.filePath = L"iconItalic.png";
 		wg.flags = WTW_GRAPH_FLAG_RELATIVE_DEF_PATH;
@@ -56,7 +56,7 @@ namespace wtwBIU
 			wtw->fnCall(WTW_GRAPH_LOAD,reinterpret_cast<WTW_PARAM>(&wg), 0);
 		}
 
-		wg.graphID = BIU_UNDERLINE;
+		wg.graphId = BIU_UNDERLINE;
 		wg.resourceId = 0;
 		wg.filePath = L"iconUnderline.png";
 		wg.flags = WTW_GRAPH_FLAG_RELATIVE_DEF_PATH;
@@ -209,7 +209,7 @@ namespace wtwBIU
 			entry.hInstance = pc.getDllHINSTANCE();
 
 			entry.itemType = CCB_TYPE_SEPARATOR;
-			entry.itemID = L"wtwBIU/sep";
+			entry.itemId = L"wtwBIU/sep";
 			pc.getWTWFUNCTIONS()->fnCall(WTW_CCB_FUNCT_ADD, reinterpret_cast<WTW_PARAM>(&entry), 0);
 
 			entry.itemFlags = CCB_FLAG_CHANGECAPTION|CCB_FLAG_CHANGEICON|CCB_FLAG_CHANGETIP;
@@ -217,21 +217,21 @@ namespace wtwBIU
 			entry.callback = onClick;
 			entry.cbData = hInput;
 
-			entry.itemID = BIU_BOLD;
-			entry.graphID = BIU_BOLD;
+			entry.itemId = BIU_BOLD;
+			entry.graphId = BIU_BOLD;
 			entry.toolTip = L"Pogrubienie";
 			entry.itemData = reinterpret_cast<void*>(BIU_BOLD_FLAG);
 			pc.getWTWFUNCTIONS()->fnCall(WTW_CCB_FUNCT_ADD, reinterpret_cast<WTW_PARAM>(&entry), 0);
 
-			entry.itemID = BIU_ITALIC;
-			entry.graphID = BIU_ITALIC;
+			entry.itemId = BIU_ITALIC;
+			entry.graphId = BIU_ITALIC;
 			entry.toolTip = L"Pochylenie";
 			entry.itemData = reinterpret_cast<void*>(BIU_ITALIC_FLAG);
 			pc.getWTWFUNCTIONS()->fnCall(WTW_CCB_FUNCT_ADD, reinterpret_cast<WTW_PARAM>(&entry), 0);
 
-			entry.itemID = BIU_UNDERLINE;
-			entry.graphID = BIU_UNDERLINE;
-			entry.toolTip = L"Podkreúlenie";
+			entry.itemId = BIU_UNDERLINE;
+			entry.graphId = BIU_UNDERLINE;
+			entry.toolTip = L"Podkr≈õlenie";
 			entry.itemData = reinterpret_cast<void*>(BIU_UNDERLINE_FLAG);
 			pc.getWTWFUNCTIONS()->fnCall(WTW_CCB_FUNCT_ADD, reinterpret_cast<WTW_PARAM>(&entry), 0);
 		}
@@ -468,8 +468,8 @@ namespace wtwBIU
 		PluginController* plugInst = static_cast<PluginController*>(ptr);
 		wtwOptionPageShowInfo* info = reinterpret_cast<wtwOptionPageShowInfo*>(wParam);
 
-		wcscpy(info->windowCaption, L"Formatowanie wysy≥anego tekstu");
-		wcscpy(info->windowDescrip, L"Pogrubienie, pochylenie, podkreúlenie");
+		wcscpy(info->windowCaption, L"Formatowanie wysy≈Çanego tekstu");
+		wcscpy(info->windowDescrip, L"Pogrubienie, pochylenie, podkre≈õlenie");
 
 		if (!plugInst->settPage)
 			plugInst->settPage = new SettingsPage(info->handle,plugInst->hInst,info->x,info->y,info->cx,info->cy);

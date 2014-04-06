@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include "stdinc.h"
 #include "SettingsPage.h"
@@ -56,14 +56,14 @@ public:
 		static WTWPLUGINFO _plugInfo = {
 			sizeof(WTWPLUGINFO),						// struct size
 			L"wtwBIU",									// plugin name
-			L"Pogrubienie, pochylenie, podkreœlenie tekstu", // plugin description
-			L"© 2011 Maciej Muszkowski",				// copyright
+			L"Pogrubienie, pochylenie, podkreÅ›lenie tekstu", // plugin description
+			L"Â© 2011-2014 Maciej Muszkowski",			// copyright
 			L"Maciej Muszkowski",						// author
 			L"maciek.muszkowski@gmail.com",				// authors contact
-			L"http://www.alset.pl",						// authors webpage
+			L"http://www.alset.pl/Maciek",				// authors webpage
 			L"",										// url to xml with autoupdate data
 			PLUGIN_API_VERSION,							// api version
-			MAKE_QWORD(0, 1, 0, 0),						// plugin version
+			MAKE_QWORD(0, 2, 0, 0),						// plugin version
 			WTW_CLASS_UTILITY,							// plugin class
 			NULL,										// function called after "O wtyczce..." pressed
 			L"{2713fdf8-9299-49db-a717-49db1b89e9ba}",	// guid

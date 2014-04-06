@@ -4,6 +4,9 @@
 
 #pragma once
 
+#include <WinSock2.h>
+#include "plInterface.h"
+
 #ifdef _DEBUG
 # define CRTDBG_MAP_ALLOC
 # include <stdlib.h>
@@ -21,7 +24,6 @@
 #include <stack>
 using namespace std;
 
-#include <windows.h>
 #include <Commctrl.h>
 #ifdef WIN32
 #pragma comment (lib,"Comctl32.lib")
@@ -31,4 +33,4 @@ using namespace std;
 #include <Richedit.h>
 #include "resource.h"
 
-#include "plInterface.h"
+#define WTW_SETTINGS_INIT L"WTW/Settings/Init"
